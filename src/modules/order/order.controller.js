@@ -158,7 +158,11 @@ export const createOrder = asyncHandler(async (req, res, next) => {
       }), // [{},{}]
       discounts: existCoupon ? [{ coupon: existCoupon.id }] : [],
     });
-    return res.json({ success: true, results: session.url });
+    return res.json({
+      success: true,
+      results: session.url,
+      message: "THanks for order, check your email!",
+    });
   }
 
   // response
